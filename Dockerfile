@@ -1,4 +1,4 @@
-FROM python:3.12.1-slim-bullseye
+FROM mcr.microsoft.com/devcontainers/python:3.12-bullseye
 
 # Install R and system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gfortran \
     liblapack-dev \
     libblas-dev \
+    build-essential \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
